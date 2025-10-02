@@ -1,0 +1,111 @@
+/* Navbar.css */
+
+/* Variáveis de cores (para consistência com global.css) */
+:root {
+  --verde-folha: #4EA1A0;
+  --marrom-terra: #805B23;
+  --laranja-queimado: #FA9805;
+  --branco: #FFFFFF;
+  --cinza-claro: #F5F5F5;
+  --cinza-escuro: #37434E;
+  --transicao-suave: 0.3s ease-in-out;
+}
+
+/* Reset básico para navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--branco);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: block;
+  top: 0;
+  z-index: 1000;
+  transition: background-color var(--transicao-suave), box-shadow var(--transicao-suave);
+}
+
+.navbar:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 5px 20px;
+  color: var(--laranja-queimado);
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: color var(--transicao-suave), transform var(--transicao-suave);
+}
+
+.logo:hover {
+  color: var(--marrom-terra);
+  transform: scale(1.05);
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 20px;
+}
+
+.menu li {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cinza-escuro);
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transicao-suave);
+}
+
+.menu li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--verde-folha);
+  left: 0;
+  bottom: -6px;
+  transition: width 0.3s ease;
+}
+
+.menu li:hover {
+  color: var(--verde-folha);
+}
+
+.menu li:hover::after {
+  width: 100%;
+}
+/* Logo como imagem */
+.logo img {
+  height: 80px; /* ajuste conforme desejar */
+  width: auto;
+  transition: transform var(--transicao-suave);
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+}

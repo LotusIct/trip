@@ -1,0 +1,103 @@
+.footer {
+  background: #ffffff;
+  color: #37434E;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footer h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.horizontal-form {
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-form input,
+.footer-form textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #FA9805;
+  width: 250px;
+  max-width: 100%;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.footer-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.footer-form input:focus,
+.footer-form textarea:focus {
+  border-color: #d87e04;
+  box-shadow: 0 0 5px rgba(250, 152, 5, 0.5);
+}
+
+.footer-form button {
+  padding: 0.8rem 1.5rem;
+  background: #FA9805;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer-form button:hover {
+  background: #d87e04;
+}
+
+.mensagem {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4EA1A0;
+  margin-top: 0.5rem;
+}
+
+.copy {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #25D366;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background: #1ebe5d;
+}
+
+.contato-form {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}

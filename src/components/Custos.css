@@ -1,0 +1,86 @@
+.custos {
+  padding: 4rem 5%;
+  background: #F5F5F5;
+  color: #333;
+}
+
+.custos h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  color:#FA9805; /* marrom-terra */
+  font-weight: 700;
+}
+
+.custos p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #805B23; /* verde petróleo */
+}
+
+/* Grid de dicas */
+.custos-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Card de dica */
+.dica-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.dica-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.dica-img img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  transition: transform 0.5s ease;
+}
+
+.dica-card:hover .dica-img img {
+  transform: scale(1.05);
+}
+
+.dica-body {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.dica-body h3 {
+  font-size: 1.4rem;
+  color: #805B23; /* laranja */
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.dica-body p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .dica-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dica-card {
+    width: 80%;
+  }
+}

@@ -1,0 +1,121 @@
+.noticias {
+  padding: 4rem 5%;
+  background: #4EA1A0;
+  color: #333;
+  margin: auto;
+}
+
+.noticias h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #F5F5F5;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.carrossel {
+  position: relative;
+}
+/* aplica espaço entre os slides */
+.slick-slide {
+  padding: 0 25px; /* ✅ controla o espaçamento lateral */
+  box-sizing: border-box;
+}
+
+/* remove margin do card */
+.noticia-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 380px; /* altura menor */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.noticia-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.noticia-card img {
+  width: 100%;
+  height: 160px; /* ✅ Menor imagem */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.noticia-info {
+  padding: 1rem;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.noticia-info h3 {
+  font-size: 1.2rem;
+  color: #fa9805;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.noticia-info p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+.noticia-info a {
+  font-size: 0.9rem;
+  color: #4ea1a0;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: auto;
+}
+
+.noticia-info a:hover {
+  color: #fa9805;
+}
+
+/* Setas */
+.slick-prev,
+.slick-next {
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  background: #fa9805;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background: #4ea1a0;
+  opacity: 1;
+}
+
+.slick-prev {
+  left: -35px;
+}
+
+.slick-next {
+  right: -35px;
+}
+
+/* Dots */
+.slick-dots li button:before {
+  font-size: 10px;
+  color: #4ea1a0;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fa9805;
+}

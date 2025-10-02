@@ -1,0 +1,86 @@
+.pets {
+  padding: 4rem 5%;
+  background: #FA9805;
+  color: #333;
+}
+
+.pets h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  color: #053D68; /* marrom-terra */
+  font-weight: 700;
+}
+
+.pets p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #F5F5F5; /* verde petróleo */
+}
+
+/* Grid de pets */
+.pets-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Card de pet */
+.pet-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 250px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pet-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.pet-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  transition: transform 0.5s ease;
+}
+
+.pet-card:hover .pet-img img {
+  transform: scale(1.05);
+}
+
+.pet-body {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.pet-body h3 {
+  font-size: 1.4rem;
+  color: #4EA1A0; /* laranja */
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.pet-body p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .pet-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pet-card {
+    width: 80%;
+  }
+}
