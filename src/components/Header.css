@@ -1,7 +1,7 @@
 .header {
   position: relative;
   text-align: center;
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,12 +26,12 @@
   z-index: 1;
 }
 
-.header h1 {
-  font-size: 3rem;
+.header h3 {
+  font-size: 2rem;
   color: var(--laranja-queimado);
 }
 
-.header h3 {
+.header h1 {
   font-size: 1.5rem;
   color: var(--branco);
   margin-top: 1rem;

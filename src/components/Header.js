@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import videoInicial from "../assets/video.mp4"; // importa o vídeo
+import videoInicial from "../assets/dogs.mp4"; // importa o vídeo
 
 export default function Header() {
   return (

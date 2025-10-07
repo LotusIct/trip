@@ -1,91 +1,98 @@
 import React, { useState } from "react";
 import './Footer.css';
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
 
-  const [contatoNome, setContatoNome] = useState("");
+  const [nome, setNome] = useState("");
   const [contatoEmail, setContatoEmail] = useState("");
-  const [contatoDescricao, setContatoDescricao] = useState("");
+  const [descricao, setDescricao] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleInscricao = (e) => {
     e.preventDefault();
     if (!email.includes("@")) {
       setMensagem("Por favor, insira um e-mail válido.");
       return;
     }
-    console.log("Email inscrito:", email);
-    setMensagem("Obrigado por se inscrever! 🎉");
+    console.log("Inscrito:", email);
+    setMensagem("Inscrição realizada com sucesso! 🎉");
     setEmail("");
   };
 
-  const handleContatoSubmit = (e) => {
+  const handleWhatsApp = (e) => {
     e.preventDefault();
-    if (!contatoNome || !contatoEmail || !contatoDescricao) {
-      alert("Preencha todos os campos antes de enviar!");
+    if (!nome || !contatoEmail || !descricao) {
+      alert("Preencha todos os campos!");
       return;
     }
     if (!contatoEmail.includes("@")) {
-      alert("Insira um e-mail válido!");
+      alert("E-mail inválido!");
       return;
     }
 
     const phone = "5511999999999";
-    const mensagemWhats = `Olá! Meu nome é ${contatoNome}. ${contatoDescricao} (Email: ${contatoEmail})`;
+    const mensagemWhats = `Olá! Meu nome é ${nome}. ${descricao} (Email: ${contatoEmail})`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(mensagemWhats)}`;
     window.open(url, "_blank");
 
-    setContatoNome("");
+    setNome("");
     setContatoEmail("");
-    setContatoDescricao("");
+    setDescricao("");
   };
 
   return (
     <footer className="footer">
-      <div className="inscrever">
-        <h3>Inscreva-se para receber novidades</h3>
-        <form onSubmit={handleSubmit} className="footer-form horizontal-form">
-          <input
-            type="email"
-            placeholder="Digite seu e-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <button type="submit">Inscrever</button>
-        </form>
-        {mensagem && <p className="mensagem">{mensagem}</p>}
-      </div>
+      <div className="footer-content">
 
-      <div className="contato">
-        <h3>Fale conosco</h3>
-        <form onSubmit={handleContatoSubmit} className="footer-form contato-form">
-          <input
-            type="text"
-            placeholder="Nome"
-            value={contatoNome}
-            onChange={(e) => setContatoNome(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={contatoEmail}
-            onChange={(e) => setContatoEmail(e.target.value)}
-            required
-          />
-          <textarea
-            placeholder="Descrição da sua mensagem"
-            value={contatoDescricao}
-            onChange={(e) => setContatoDescricao(e.target.value)}
-            required
-          />
-          <button type="submit" className="whatsapp-button">
-            <FaWhatsapp size={20} /> Enviar via WhatsApp
-          </button>
-        </form>
+        <div className="newsletter">
+          <h3>Receba novidades</h3>
+          <p>Fique por dentro das últimas dicas e destinos pet-friendly!</p>
+          <form onSubmit={handleInscricao} className="newsletter-form">
+            <input
+              type="email"
+              placeholder="Seu melhor e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit">
+              <FaEnvelope /> Inscrever
+            </button>
+          </form>
+          {mensagem && <p className="mensagem">{mensagem}</p>}
+        </div>
+
+        <div className="contato">
+          <h3>Fale com a gente</h3>
+          <form className="contato-form" onSubmit={handleWhatsApp}>
+            <input
+              type="text"
+              placeholder="Seu nome"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+              required
+            />
+            <input
+              type="email"
+              placeholder="Seu e-mail"
+              value={contatoEmail}
+              onChange={(e) => setContatoEmail(e.target.value)}
+              required
+            />
+            <textarea
+              placeholder="Digite sua mensagem"
+              value={descricao}
+              onChange={(e) => setDescricao(e.target.value)}
+              required
+            />
+            <button type="submit" className="whatsapp-btn">
+              <FaWhatsapp size={20} /> Entrar em contato
+            </button>
+          </form>
+        </div>
+
       </div>
 
       <p className="copy">© 2025 Patas pelo Brasil. Todos os direitos reservados.</p>

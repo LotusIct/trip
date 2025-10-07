@@ -1,103 +1,207 @@
 .footer {
-  background: #ffffff;
+  background: #f8f9fa;
   color: #37434E;
-  text-align: center;
-  padding: 3rem 2rem;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  padding: 4rem 2rem 2rem;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+.footer-content {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+.form-group {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1.2rem 1rem 0.6rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  background: none;
+  color: #37434E;
+  transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Floating label */
+.form-group label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1rem;
+  color: #888;
+  background: #f8f9fa;
+  padding: 0 4px;
+  transition: 0.2s ease;
+  pointer-events: none;
+}
+
+/* Se o campo estiver em foco OU preenchido */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: 0.2rem;
+  left: 0.8rem;
+  font-size: 0.75rem;
+  color: #fa9805;
+}
+
+/* Foco visual */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #fa9805;
+  box-shadow: 0 0 5px rgba(250, 152, 5, 0.3);
+}
+
+/* Ajuste para input preenchido */
+input:valid,
+textarea:valid {
+  border-color: #4ea1a0;
 }
 
 .footer h3 {
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: #FA9805;
 }
 
-.footer-form {
+.footer p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* Newsletter */
+.newsletter-form {
   display: flex;
-  justify-content: center;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
 }
 
-.horizontal-form {
-  flex-direction: row;
-  align-items: center;
-}
-
-.footer-form input,
-.footer-form textarea {
+.newsletter-form input {
   padding: 0.8rem 1rem;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 2px solid #FA9805;
+  font-size: 1rem;
   width: 250px;
   max-width: 100%;
-  font-size: 1rem;
   outline: none;
-  transition: all 0.3s ease;
 }
 
-.footer-form textarea {
-  height: 100px;
-  resize: none;
-}
-
-.footer-form input:focus,
-.footer-form textarea:focus {
-  border-color: #d87e04;
-  box-shadow: 0 0 5px rgba(250, 152, 5, 0.5);
-}
-
-.footer-form button {
-  padding: 0.8rem 1.5rem;
+.newsletter-form button {
   background: #FA9805;
   color: white;
   font-weight: 600;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-.footer-form button:hover {
+.newsletter-form button:hover {
   background: #d87e04;
 }
 
 .mensagem {
-  font-size: 0.95rem;
+  margin-top: 0.8rem;
   font-weight: 500;
-  color: #4EA1A0;
-  margin-top: 0.5rem;
+  color: #4ea1a0;
 }
 
-.copy {
-  font-size: 0.85rem;
-  opacity: 0.8;
+/* Contato */
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1rem;
 }
 
-.whatsapp-button {
-  display: inline-flex;
+.contato-form input,
+.contato-form textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #4ea1a0;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+  border-color: #2f7c7b;
+  box-shadow: 0 0 5px rgba(78, 161, 160, 0.5);
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #25D366;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.whatsapp-button:hover {
+.whatsapp-btn:hover {
   background: #1ebe5d;
 }
 
-.contato-form {
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+/* Copy */
+.copy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newsletter-form input,
+  .contato-form input,
+  .contato-form textarea {
+    width: 100%;
+  }
+
+  .newsletter-form button,
+  .whatsapp-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

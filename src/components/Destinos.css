@@ -14,30 +14,33 @@
   letter-spacing: 1px;
 }
 
-/* Carrossel */
-.carrossel-container {
+/* Carrossel wrapper (com setas fora) */
+.carrossel-wrapper {
   position: relative;
-  overflow: hidden;
   max-width: 1100px;
   margin: auto;
-  padding: 0 40px;
+  padding: 0 60px; /* deixa espaço para as setas */
 }
 
+/* Carrossel container visível */
+.carrossel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Faixa do carrossel */
 .carrossel-track {
   display: flex;
   transition: transform 0.5s ease;
 }
 
-/* Cards - sempre 3 visíveis */
+/* Cards */
 .card {
-  flex: 0 0 calc(100% / 3);
-  padding: 0 10px; /* espaço entre cards */
+  padding: 0 10px;
   box-sizing: border-box;
   background: #fff;
-  margin: 5px;
+  margin: 5px 0;
 }
-
-
 
 .card-img img {
   width: 100%;
@@ -90,30 +93,34 @@
 }
 
 .arrow.next {
-  right: 0px;
+  right: 0;
+}
+.arrow svg {
+  display: block;
+  margin: auto;
 }
 
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 1024px) {
-  .card {
-    flex: 0 0 50%; /* 2 visíveis */
+  .carrossel-wrapper {
+    padding: 0 50px;
+  }
+
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .card {
-    flex: 0 0 100%; /* 1 visível */
+  .carrossel-wrapper {
+    padding: 0 30px;
   }
 
-  .arrow.prev {
-    left: 5px;
-  }
-
-  .arrow.next {
-    right: 5px;
-  }
-
-  .carrossel-container {
-    padding: 0 10px;
+  .arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
   }
 }
